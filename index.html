@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sandbox</title>
+</head>
+
+<body>
+
+<span class="sound StandardProjectile">one_shot.ogg</span>
+<!--
+Hero Death from http://www.freesound.org/people/dobroide/sounds/4243/
+-->
+<span class="sound HeroDeath">hero_death.ogg</span>
+<span class="sound PickUp">pickup.ogg</span>
+
+
+<script src="jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="howler.min.js" type="text/javascript"></script>
+<script>
+
+    oneShot = new Howl({
+        urls: [$(".StandardProjectile").text()]
+    });
+
+    pickup = new Howl({
+        urls: [$(".PickUp").text()]
+    });
+
+    heroDeath = new Howl({
+        urls: [$(".HeroDeath").text()]
+    });
+
+    setInterval(function() {
+        oneShot.play();
+    }, 3000);
+
+    setInterval(function() {
+        pickup.play();
+    }, 5000);
+
+    setInterval(function() {
+        heroDeath.play();
+    }, 7000);
+
+</script>
+
+</body>
+</html>
